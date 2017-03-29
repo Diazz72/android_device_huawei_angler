@@ -432,7 +432,4 @@
     <!-- Keep chosen default camera app pinned in memory for faster launching -->
     <bool name="config_pinnerCameraApp">true</bool>
 
-    <!-- Whether device supports High Brightness Mode -->
-    <bool name="config_supportHighBrightness">true</bool>
-
 </resources>
