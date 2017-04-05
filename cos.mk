@@ -9,7 +9,7 @@ $(call inherit-product, vendor/cos/common.mk)
 $(call inherit-product, device/huawei/angler/aosp_angler.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := aosp_angler
+PRODUCT_NAME := cos_angler
 PRODUCT_DEVICE := angler
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Nexus 6P
