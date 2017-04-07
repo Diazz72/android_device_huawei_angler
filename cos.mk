@@ -26,10 +26,3 @@ COS_RELEASE=true
 #PRODUCT_PACKAGES += \
 #    Camera2 \
 #    Snap
-
-# Use the latest approved GMS identifiers unless running a signed build
-#ifneq ($(SIGN_BUILD),true)
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=google/angler/angler:7.1.1/NUF26N/3687344:user/release-keys \
-    PRIVATE_BUILD_DESC="angler-user 7.1.1 NUF26N 3687344 release-keys"
-#endif
