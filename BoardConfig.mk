@@ -47,6 +47,10 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=angler androidboot.console=ttyHSL0 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-3,4-7 no_console_suspend
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
+ifneq ($(HAS_ENFORCING),true)
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+endif
+
 BOARD_USES_ALSA_AUDIO := true
 # Needed for VoLTE
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
@@ -148,6 +152,12 @@ NXP_CHIP_TYPE := 2
 
 # Enable real time lockscreen charging current values
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
+# Ignore vendor partition audio_effects.conf and use the device (system/etc/) one
+TARGET_IGNORE_VENDOR_AUDIO_EFFECTS_CONF := true
+# Angler has its own vendor.img so we can't build audio_effects from DSPlibs tree
+# to the vendor partition, so we'll build it from the device tree to the system partition
+TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF := true
 
 USE_CLANG_PLATFORM_BUILD := true
 

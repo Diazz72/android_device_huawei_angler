@@ -38,7 +38,6 @@ PRODUCT_PACKAGES += \
 	Hangouts \
 	Photos \
 	PlusOne \
-	PrebuiltKeep \
 	YouTube
 
 # Only build the round icons if they are requested
